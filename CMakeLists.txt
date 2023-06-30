@@ -1,20 +1,8 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.23)
 project(PingPong_SDL2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-find_package(SDL2 CONFIG REQUIRED)
-find_package(SDL2_image CONFIG REQUIRED)
-find_package(SDL2_ttf CONFIG REQUIRED)
-find_package(SDL2_mixer CONFIG REQUIRED)
-find_package(fmt CONFIG REQUIRED)
+add_link_options(/FUNCTIONPADMIN)
 
-file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR}/Debug)
-
-add_executable(${PROJECT_NAME} main.cpp main.cpp)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2)
-target_link_libraries(${PROJECT_NAME} PRIVATE SDL2_image::SDL2_image)
-target_link_libraries(${PROJECT_NAME} PRIVATE SDL2_ttf::SDL2_ttf)
-target_link_libraries(${PROJECT_NAME} PRIVATE SDL2_mixer::SDL2_mixer)
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
+add_subdirectory(src)
