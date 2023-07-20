@@ -4,7 +4,8 @@
 
 int main() {
   Engine gameEngine;
-  if (!gameEngine.init()) return 1;
+  if (!gameEngine.init())
+    return 1;
 
   while (gameEngine.isRunning) {
     gameEngine.update();
