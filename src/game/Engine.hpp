@@ -5,11 +5,9 @@
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 #include <iostream>
-#include "../game/GameState.hpp"
 #include "DeltaTimer.hpp"
 #include "GameState.hpp"
 #include "KeyboardManager.hpp"
-#include "Window.hpp"
 
 class Engine {
   const char* TITLE = "Pong";

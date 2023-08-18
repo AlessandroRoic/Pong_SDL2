@@ -49,13 +49,13 @@ void PlayerScore::free() {
   winnerTexture = nullptr;
 }
 
-PLAYER PlayerScore::checkWinner() const {
+std::optional<PLAYER>  PlayerScore::checkWinner() const {
   if (playerOne == 11) {
     return PLAYER::ONE;
-  }
-  if (playerTwo == 11) {
+  } else if (playerTwo == 11) {
     return PLAYER::TWO;
   }
+  return std::nullopt;
 }
 
 void PlayerScore::resetScores() {

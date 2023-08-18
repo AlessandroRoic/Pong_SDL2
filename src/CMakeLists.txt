@@ -6,14 +6,12 @@ find_package(fmt CONFIG REQUIRED)
 
 file(COPY ${CMAKE_SOURCE_DIR}/src/assets DESTINATION ${CMAKE_BINARY_DIR}/src)
 
-add_executable(${PROJECT_NAME} main.cpp)
-
-add_subdirectory(engine)
 add_subdirectory(game)
 add_subdirectory(utils)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE
-        engine
+add_executable(${PROJECT_NAME} main.cpp)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC
         game
         utils
         SDL2::SDL2
@@ -21,4 +19,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         SDL2_ttf::SDL2_ttf
         SDL2_mixer::SDL2_mixer
         fmt::fmt
-        )
+)
+
+install(DIRECTORY assets DESTINATION .)

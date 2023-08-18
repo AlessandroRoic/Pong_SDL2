@@ -2,7 +2,6 @@
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
-#include <fmt/format.h>
 #include <Engine.hpp>
 #include "../utils/Constants.hpp"
 #include "Timer.hpp"
@@ -112,7 +111,7 @@ void Engine::close() {
 
 void Engine::logMessage(const std::string& message, bool isError) {
   if (isError) {
-    std::string msg = fmt::format("({}): {}", message, SDL_GetError());
+    std::string msg = std::format("({}): {}", message, SDL_GetError());
     SDL_Log("%s", msg.c_str());
     return;
   }

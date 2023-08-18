@@ -1,5 +1,5 @@
 #include "Timer.hpp"
-
+#include <memory>
 #include <utility>
 
 SDL_TimerID Timer::setTimeout(Uint32 delay, std::function<void()> callback) {

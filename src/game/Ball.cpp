@@ -2,7 +2,7 @@
 #include <SDL_image.h>
 #include <SDL_render.h>
 #include <random>
-#include "../engine/Engine.hpp"
+#include "Engine.hpp"
 #include "../utils/Constants.hpp"
 
 constexpr float MIN_Y = -1.0f;

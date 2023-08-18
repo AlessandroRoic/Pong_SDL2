@@ -1,7 +1,7 @@
 #include "Player.hpp"
 #include <SDL_image.h>
 #include <SDL_render.h>
-#include "../engine/Engine.hpp"
+#include "Engine.hpp"
 #include "../utils/Constants.hpp"
 
 template <typename T>
@@ -49,6 +49,7 @@ PADDLE_SECTION Player::checkPaddleHitSection(float y) const {
   } else if (isInRange(y, rect.y + HEIGHT * 2.0f / 3 + 1, rect.y + HEIGHT)) {
     return BOTTOM;
   }
+  return MIDDLE;
 }
 
 Player::Player() = default;

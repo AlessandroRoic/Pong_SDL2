@@ -1,6 +1,5 @@
 #define SDL_MAIN_HANDLED
-
-#include "engine/Engine.hpp"
+#include "Engine.hpp"
 
 int main() {
   Engine gameEngine;

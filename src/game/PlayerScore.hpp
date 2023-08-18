@@ -5,6 +5,7 @@
 #include <SDL_ttf.h>
 #include <cstdint>
 #include "../utils/Vector2.hpp"
+#include <optional>
 
 enum PLAYER { ONE, TWO };
 
@@ -28,7 +29,7 @@ class PlayerScore {
 
   void render(SDL_Renderer* renderer);
 
-  [[nodiscard]] PLAYER checkWinner() const;
+  [[nodiscard]] std::optional<PLAYER> checkWinner() const;
 
   void resetScores();
 

@@ -1,20 +1,25 @@
 add_library(game "")
 
-target_link_libraries(game PRIVATE SDL2::SDL2 SDL2_image::SDL2_image engine)
+target_include_directories(game PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_link_libraries(game
+        PRIVATE
+        SDL2::SDL2
+        SDL2_image::SDL2_image
+        SDL2_ttf::SDL2_ttf
+        SDL2_mixer::SDL2_mixer)
 
 target_sources(game
-        PRIVATE
+        PUBLIC
         Player.cpp
         GameState.cpp
         Net.cpp
         Ball.cpp
         PlayerScore.cpp
-        PUBLIC
-        Player.hpp
-        GameState.hpp
-        Net.hpp
-        Ball.hpp
-        PlayerScore.hpp
+        Engine.cpp
+        DeltaTimer.cpp
+        KeyboardManager.cpp
+        Timer.cpp
         )
 
-target_include_directories(game PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+install(TARGETS game DESTINATION game)
