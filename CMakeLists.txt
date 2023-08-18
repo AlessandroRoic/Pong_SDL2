@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.23)
-project(PingPong_SDL2)
+project(Pong_SDL2)
 set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(src)
 
-install(TARGETS PingPong_SDL2 DESTINATION .)
+install(TARGETS Pong_SDL2 DESTINATION .)
 
 include(InstallRequiredSystemLibraries)
 set(CPACK_PACKAGE_NAME "Pong_SDL2")
